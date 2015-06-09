@@ -1,0 +1,11 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <color name="primary">#123148</color>
+    <color name="primarydark">#001E25</color>
+    <color name="textprimary">#FFFFFF</color>
+    <color name="windowbackground">#FFFFFF</color>
+    <color name="navigationbar">#123148</color>
+    <color name="colorbgdrawablestroke">#EAEAEA</color>
+    <color name="colorscreenbg">#f3f3f3</color>
+    <color name="coloredittext">#5A5C5E</color>
+</resources>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="lbl_origin">ORIGIN</string>
+    <string name="lbl_destination">DESTINATION (OPTIONAL)</string>
+    <string name="lbl_origincity">Origin city</string>
+    <string name="lbl_origindate">Origin date</string>
+    <string name="lbl_distancefrorigin">Distance from origin</string>
+    <string name="lbl_destinationcity">Destination city</string>
+    <string name="lbl_distancefromdestination">Distance from destination</string>
+    <string-array name="list_of_countries">
+        <item>New york</item>
+        <item>New hapshire</item>
+        <item>Manchester</item>
+        <item>Boston</item>
+        <item>New jersy</item>
+        <item>Paris</item>
+        <item>London</item>
+        <item>New Local</item>
+    </string-array>
+
+</resources>
