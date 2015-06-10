@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,10 +13,11 @@
         android:layout_height="wrap_content"
         android:background="@color/primary"
         android:minHeight="?attr/actionBarSize">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_menu"/>
+            android:src="@drawable/ic_menu" />
     </android.support.v7.widget.Toolbar>
 
 
@@ -60,8 +62,8 @@
                         android:id="@+id/imageviewlocation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
                         android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
                         android:paddingBottom="@dimen/dim5"
                         android:src="@drawable/ic_location" />
 
@@ -70,8 +72,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-
                         android:layout_marginLeft="@dimen/dim30"
+                        android:layout_toLeftOf="@+id/imageviewnavigate"
                         android:layout_toRightOf="@+id/imageviewlocation"
                         android:background="@android:color/white"
                         android:hint="@string/lbl_origincity"
@@ -143,7 +145,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:paddingBottom="@dimen/dim20"
+                        android:paddingBottom="@dimen/dim30"
                         android:src="@drawable/ic_distance" />
 
 
@@ -158,19 +160,18 @@
                         android:hint="@string/lbl_distancefrorigin" />
 
 
-                    <SeekBar
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
+                    <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
                         android:id="@+id/seekBar2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/imageviewdistance"
                         android:layout_alignLeft="@+id/edittextorigindistance"
                         android:layout_alignStart="@+id/edittextorigindistance"
-                        android:paddingLeft="1dp"
-                        android:paddingRight="1dp"
-                        android:progress="50" />
+                        android:paddingLeft="-1dp"
+                        android:paddingRight="-1dp"
+                        app:dsb_max="100"
+                        app:dsb_min="0" />
                 </RelativeLayout>
-
-
             </LinearLayout>
 
             <TextView
@@ -240,40 +241,44 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:paddingBottom="@dimen/dim20"
+                        android:paddingBottom="@dimen/dim30"
                         android:src="@drawable/ic_distance" />
 
                     <TextView
                         android:id="@+id/edittextdistancedestination"
+                        style="?android:textAppearanceMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        style="?android:textAppearanceMedium"
                         android:layout_marginLeft="@dimen/dim30"
                         android:layout_toRightOf="@+id/imageviewdistancedestination"
                         android:background="@android:color/white"
                         android:hint="@string/lbl_distancefromdestination" />
 
 
-                    <SeekBar
+                    <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
                         android:id="@+id/seekBar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/imageviewdistancedestination"
                         android:layout_alignLeft="@+id/edittextdistancedestination"
                         android:layout_alignStart="@+id/edittextdistancedestination"
-                        android:paddingLeft="1dp"
-                        android:paddingRight="1dp"
-                        android:progress="50" />
+                        android:paddingLeft="-1dp"
+                        android:paddingRight="-1dp"
+                        app:dsb_max="100"
+                        app:dsb_min="0"
+
+                        />
 
                 </RelativeLayout>
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
     <EditText
+        android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="time"
         android:ems="10"
-        android:id="@+id/editText" />
+        android:inputType="time" />
 </LinearLayout>

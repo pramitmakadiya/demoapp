@@ -92,6 +92,7 @@ public class MainActivity extends ActionBarActivity {
         };
 
         DatePickerDialog dp = new DatePickerDialog(MainActivity.this, myDateListener, year, month, day);
+
         dp.show();
     }
 
