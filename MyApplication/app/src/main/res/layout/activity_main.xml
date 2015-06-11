@@ -265,13 +265,9 @@
                         android:paddingLeft="-1dp"
                         android:paddingRight="-1dp"
                         app:dsb_max="100"
-                        app:dsb_min="0"
-
-                        />
-
+                        app:dsb_min="0"/>
                 </RelativeLayout>
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 

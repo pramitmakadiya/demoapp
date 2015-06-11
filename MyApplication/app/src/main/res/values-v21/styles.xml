@@ -3,16 +3,54 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
-            <item name="android:windowContentTransitions">true</item>
-            <item name="android:windowAllowEnterTransitionOverlap">true</item>
-            <item name="android:windowAllowReturnTransitionOverlap">true</item>
-            <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
-            <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
-            <item name="android:navigationBarColor">@color/primarydark</item>
-            <item name="colorPrimary">@color/primary</item>
-            <item name="colorPrimaryDark">@color/primarydark</item>
-
-
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
+        <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+        <item name="android:navigationBarColor">@color/primarydark</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primarydark</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:selectableItemBackground">@color/link_text_dark</item>
+        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
     </style>
+
+
+    <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+    </style>
+
+
+    <!--<style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">-->
+    <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+
+        <item name="android:headerBackground">@color/link_text_dark</item>
+        <!--<item name="android:headerYearTextAppearance">@android:style/TextAppearance.DeviceDefault.Small</item>-->
+        <!--<item name="android:headerMonthTextAppearance">@android:style/TextAppearance.DeviceDefault.Small</item>-->
+       <!--<item name="android:headerDayOfMonthTextAppearance">@android:style/TextAppearance.DeviceDefault.Small</item>-->
+        <item name="android:selectableItemBackground">@color/link_text_dark</item>
+        <item name="colorAccent">@color/link_text_dark</item>
+
+      <!--  <item name="android:dateTextAppearance">@android:style/TextAppearance.DeviceDefault</item>-->
+        <item name="android:focusedMonthDateColor">@color/link_text_dark</item>
+        <!--<item name="android:calendarViewStyle">calendar</item>-->
+    </style>
+
+    <style name="textstyle" parent="@android:style/TextAppearance.DeviceDefault.Large">
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+<!--
+    dayOfWeekBackground
+    dayOfWeekTextAppearance
+    headerMonthTextAppearance
+    headerDayOfMonthTextAppearance
+    headerYearTextAppearance
+    headerSelectedTextColor
+    yearListItemTextAppearance
+    yearListSelectorColor
+    calendarTextColor
+    calendarSelectedTextColor-->
 
 </resources>

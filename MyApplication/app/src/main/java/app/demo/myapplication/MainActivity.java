@@ -2,6 +2,7 @@ package app.demo.myapplication;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -20,9 +21,11 @@ import java.util.Calendar;
 import java.util.Date;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements Datepickdialog.CustomDialoglistner {
     AutoCompleteTextView origincity, destinationcity;
     EditText edittextdate;
+    FragmentManager fm;
+    Datepickdialog datepick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +48,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus)
-                    showdatedialog();
+                    showDateDialog();
             }
         });
     }
@@ -72,29 +75,52 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+//    private void showdatedialog() {
+//
+//        Calendar c1 = Calendar.getInstance();
+//        int year = c1.get(Calendar.YEAR);
+//        int month = c1.get(Calendar.MONTH);
+//        int day = c1.get(Calendar.DAY_OF_MONTH);
+//
+//        DatePickerDialog.OnDateSetListener myDateListener  = new DatePickerDialog.OnDateSetListener() {
+//
+//            public void onDateSet(DatePicker arg0, int arg1, int arg2, int arg3) {
+//                if(arg0.isShown()){
+//                    //do further code here
+//                    String date = arg1 + "-" + arg2 + "-" + arg3;
+//                    edittextdate.setText(date);
+//                }
+//            }
+//
+//        };
+//
+//        DatePickerDialog dp = new DatePickerDialog(MainActivity.this, myDateListener, year, month, day);
+//        dp.show();
+//    }
+
     private void showdatedialog() {
-
-        Calendar c1 = Calendar.getInstance();
-        int year = c1.get(Calendar.YEAR);
-        int month = c1.get(Calendar.MONTH);
-        int day = c1.get(Calendar.DAY_OF_MONTH);
-
-        DatePickerDialog.OnDateSetListener myDateListener  = new DatePickerDialog.OnDateSetListener() {
-
-            public void onDateSet(DatePicker arg0, int arg1, int arg2, int arg3) {
-                if(arg0.isShown()){
-                    //do further code here
-                    String date = arg1 + "-" + arg2 + "-" + arg3;
-                    edittextdate.setText(date);
-                }
-            }
-
-        };
-
-        DatePickerDialog dp = new DatePickerDialog(MainActivity.this, myDateListener, year, month, day);
-
-        dp.show();
+        final Dialog dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.dialoglayout);
+        dialog.setTitle("Title...");
+        dialog.show();
     }
 
 
+    private void showDateDialog() {
+        fm = getSupportFragmentManager();
+        datepick = new Datepickdialog();
+        datepick.show(fm, "fragment_edit_name");
+    }
+
+
+    @Override
+    public void cancelclick() {
+        datepick.dismiss();
+    }
+
+    @Override
+    public void okLclick(String s) {
+        edittextdate.setText(s);
+        datepick.dismiss();
+    }
 }

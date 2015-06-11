@@ -8,4 +8,5 @@
     <color name="colorbgdrawablestroke">#EAEAEA</color>
     <color name="colorscreenbg">#f3f3f3</color>
     <color name="coloredittext">#5A5C5E</color>
+    <color name="link_text_dark">#5c5cff</color>
 </resources>

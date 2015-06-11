@@ -1,11 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <DatePicker
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/link_text_dark"
+        android:layout_height="wrap_content">
 
-        android:id="@+id/datePicker" />
+
+            <TextView
+                android:id="@+id/textviewyear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:padding="@dimen/dim10"
+                android:textColor="@android:color/white"
+                android:text="2017" />
+
+            <TextView
+                android:id="@+id/textviewdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:padding="@dimen/dim10"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:text="THU, ss asas" />
+
+    </LinearLayout>
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        app:mcv_selectionColor="@color/link_text_dark"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textviewcancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:padding="@dimen/dim10"
+            android:textColor="@color/link_text_dark"
+            android:text="CANCEL" />
+
+        <TextView
+            android:id="@+id/textviewok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:padding="@dimen/dim10"
+            android:textColor="@color/link_text_dark"
+            android:text="OK" />
+
+    </LinearLayout>
 </LinearLayout>
